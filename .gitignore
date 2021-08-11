@@ -1,0 +1,49 @@
+*.class
+*.log
+version.properties
+
+# IntelliJ Specific
+.idea
+*.iml
+
+# sbt specific
+.cache/
+.history/
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+.vscode/
+.bsp/
+
+# Play specific
+logs
+project/project
+project/target
+target
+tmp
+dist
+.cache
+
+# OS X-specific
+.DS_Store
+.bloop/
+.metals/
+project/metals.sbt
+
+.terraform/
+
+*.tfstate*
+tfplan
+node_modules
+package-lock.json
+
+# asdf version manager
+.tool-versions

@@ -1,0 +1,63 @@
+{
+   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+   "extends": [
+      "config:base"
+   ],
+   "commitMessagePrefix": "🔧 renovate: ",
+   "maven": {
+      "enabled": false
+   },
+   "enabledManagers": [
+      "sbt",
+      "droneci"
+   ],
+   "sbt": {
+      "fileMatch": [
+         "project/*.scala",
+         "project/*.sbt",
+         "build.sbt",
+         "project/*.properties",
+         "project/build.properties"
+      ]
+   },
+   "labels": [
+      "🔧 renovate"
+   ],
+   "packageRules": [
+      {
+         "matchPackagePatterns": [
+            "*"
+         ],
+         "matchUpdateTypes": [
+            "minor"
+         ],
+         "automerge": false,
+         "groupName": "all minor dependencies",
+         "groupSlug": "all-minor",
+         "excludePackagePatterns": [
+            "org.scalatest:scalatest"
+         ]
+      },
+      {
+         "matchPackagePatterns": [
+            "*"
+         ],
+         "matchUpdateTypes": [
+            "patch"
+         ],
+         "automerge": false,
+         "groupName": "all patch dependencies",
+         "groupSlug": "all-patch"
+      },
+      {
+         "groupName": "Terraform dependencies",
+         "matchPackageNames": [
+            "hashicorp/terraform",
+            "terraform"
+         ]
+      }
+   ],
+   "dependencyDashboard": true,
+   "dependencyDashboardAutoclose": true,
+   "enabled": true
+}
